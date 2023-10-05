@@ -2,9 +2,9 @@ name: ie-bank-backend
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "santiago-fischel" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "santiago-fischel" ]
   workflow_dispatch:
 
 permissions:
