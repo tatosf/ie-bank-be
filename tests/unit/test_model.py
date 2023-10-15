@@ -14,3 +14,34 @@ def test_create_account():
     assert account.account_number != None
     assert account.balance == 0.0
     assert account.status == 'Active'
+
+def test_account_balance_update():
+    """
+    GIVEN an existing Account with initial balance 100.0
+    WHEN the account balance is updated through deposit and withdrawal
+    THEN check if the balance is updated correctly
+    """
+    initial_balance = 0.0
+    account = Account('Marimba Smith', 'USA', '$')
+    amount_to_add = 50.0
+    account.balance += amount_to_add
+
+    print("Account balance:", account.balance)
+    print("Expected balance:", initial_balance + amount_to_add)
+
+    assert account.balance == initial_balance + amount_to_add
+
+
+def test_account_status_change():
+
+    """
+    GIVEN an existing Account
+    WHEN the account status is changed
+    THEN check if the status is updated correctly
+    """
+
+    account = Account('Willy John', 'Canada', '$')
+    assert account.status == 'Active'
+
+    account.status = 'Inactive'
+    assert account.status == 'Inactive'
